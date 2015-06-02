@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace SchoolTime.Models
 {
     public class AsigancionSalon
     {
+        [Key]
         public int Id { set; get; }
         public string Salon { set; get; }
         public DateTime Hora { set; get; }

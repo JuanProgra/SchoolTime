@@ -1,5 +1,6 @@
 namespace SchoolTime.Migrations
 {
+    using SchoolTime.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -14,18 +15,36 @@ namespace SchoolTime.Migrations
 
         protected override void Seed(SchoolTime.Models.SchoolTimeDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            context.Rols.AddOrUpdate(r => r.Id,
+                new Rol { Nombre = "Admin" },
+                new Rol { Nombre = "Profesor" },
+                new Rol { Nombre = "Alumno" });
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.Usuarios.AddOrUpdate(u => u.Id,
+                new Usuario { Nombre = "admin", Apellido = "admin", NombreUsuario = "admin", Password = "123", Correo = "admin@schooltime.com" });
+
+            context.Categorias.AddOrUpdate(c => c.Id,
+                new Categoria { Nombre = "Diversificado" },
+                new Categoria { Nombre = "Basicos" });
+
+            context.Cursos.AddOrUpdate(cu => cu.Id,
+                new Curso { Nombre = "Informatica" },
+                new Curso { Nombre = "Dibujo" });
+
+            context.Grados.AddOrUpdate(gr => gr.Id,
+                new Grado { Nombre = "Cuarto" },
+                new Grado { Nombre = "Quinto" },
+                new Grado { Nombre = "Sexto" });
+
+            context.Jornadas.AddOrUpdate(j => j.Id,
+                new Jornada { Nombre = "Matutina" },
+                new Jornada { Nombre = "Vespertina" });
+
+            context.Materia.AddOrUpdate(m => m.Id,
+                new Materia { Nombre = "Lenguaje" },
+                new Materia { Nombre = "Matematicas" },
+                new Materia { Nombre = "Fisica Fundamental" },
+                new Materia { Nombre = "Estadistica" });
         }
     }
 }
