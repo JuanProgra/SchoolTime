@@ -12,7 +12,7 @@ namespace SchoolTime.Models
         [Key]
         public int Id { set; get; }
         [Required]
-        public int Codigo { set; get; }
+        public String Codigo { set; get; }
 
         public int AsignacionGradoId { set; get; }
         public virtual AsignacionGrado AsignacionGrado { set; get; }
@@ -20,7 +20,7 @@ namespace SchoolTime.Models
         public int JornadaId { set; get; }
         public virtual Jornada Jornada { set; get; }
 
-        public virtual ICollection<AsignacionMateria> AsignacionMateria { get; set; }
+        public virtual ICollection<AsigancionSalon> AsigancionSalon { get; set; }
         public virtual ICollection<AsignacionGrupo> AsignacionGrupo { get; set; }
     }
 }

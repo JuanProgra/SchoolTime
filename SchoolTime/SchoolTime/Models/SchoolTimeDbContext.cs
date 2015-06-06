@@ -19,11 +19,11 @@ namespace SchoolTime.Models
         public DbSet<AsignacionGrado> AsignacionGradoes { get; set; }
         public DbSet<CategoriaCurso> CategoriaCursoes { get; set; }
         public DbSet<AsignacionRol> AsignacionRols { get; set; }
-        public DbSet<AsignacionMateria> AsignacionMaterias { get; set; }
         public DbSet<AsignacionGrupo> AsignacionGrupoes { get; set; }
         public DbSet<AsigancionTarea> AsigancionTareas { get; set; }
         public DbSet<AsigancionSalon> AsigancionSalons { get; set; }
         public DbSet<NotaTarea> NotaTareas { get; set; }
+        public DbSet<Salon> Salon { get; set; }
  
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

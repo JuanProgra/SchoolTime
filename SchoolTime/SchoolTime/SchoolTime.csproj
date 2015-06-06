@@ -132,7 +132,6 @@
     <Compile Include="Models\AsigancionTarea.cs" />
     <Compile Include="Models\AsignacionGrado.cs" />
     <Compile Include="Models\AsignacionGrupo.cs" />
-    <Compile Include="Models\AsignacionMateria.cs" />
     <Compile Include="Models\AsignacionRol.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\CategoriaCurso.cs" />
@@ -144,6 +143,7 @@
     <Compile Include="Models\NotaTarea.cs" />
     <Compile Include="Models\NotificacionBitacora.cs" />
     <Compile Include="Models\Rol.cs" />
+    <Compile Include="Models\Salon.cs" />
     <Compile Include="Models\SchoolTimeDbContext.cs" />
     <Compile Include="Models\Tarea.cs" />
     <Compile Include="Models\Usuario.cs" />

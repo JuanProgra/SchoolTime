@@ -7,13 +7,10 @@ using System.Threading.Tasks;
 
 namespace SchoolTime.Models
 {
-    public class Materia
+    public class Salon
     {
         [Key]
         public int Id { get; set; }
         public String Nombre { get; set; }
-
-        public virtual ICollection<AsigancionSalon> AsigancionSalon { get; set; }
-        public virtual ICollection<AsigancionTarea> AsigancionTarea { get; set; }
     }
 }

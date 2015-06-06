@@ -36,6 +36,6 @@ C:\Users\Godinez Miranda\Documents\Visual Studio 2013\Projects\SchoolTime\School
 C:\Users\Godinez Miranda\Documents\Visual Studio 2013\Projects\SchoolTime\SchoolTime\bin\es\System.Web.WebPages.resources.dll
 C:\Users\Godinez Miranda\Documents\Visual Studio 2013\Projects\SchoolTime\SchoolTime\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Godinez Miranda\Documents\Visual Studio 2013\Projects\SchoolTime\SchoolTime\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\Godinez Miranda\Documents\Visual Studio 2013\Projects\SchoolTime\SchoolTime\obj\Debug\SchoolTime.csprojResolveAssemblyReference.cache
 C:\Users\Godinez Miranda\Documents\Visual Studio 2013\Projects\SchoolTime\SchoolTime\obj\Debug\SchoolTime.dll
 C:\Users\Godinez Miranda\Documents\Visual Studio 2013\Projects\SchoolTime\SchoolTime\obj\Debug\SchoolTime.pdb
+C:\Users\Godinez Miranda\documents\visual studio 2013\Projects\SchoolTime\SchoolTime\obj\Debug\SchoolTime.csprojResolveAssemblyReference.cache

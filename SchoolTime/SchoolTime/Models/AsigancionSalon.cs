@@ -11,11 +11,17 @@ namespace SchoolTime.Models
     {
         [Key]
         public int Id { set; get; }
-        public string Salon { set; get; }
+        public int SalonId { set; get; }
+        public int? GrupoId { set; get; }
+        public int MateriaId { set; get; }
+        [DisplayFormat(DataFormatString = "{0:T}", ApplyFormatInEditMode = true)]
         public DateTime Hora { set; get; }
+        [DisplayFormat(DataFormatString = "{0:dddd}", ApplyFormatInEditMode = true)]
         public DateTime Dia { set; get; }
 
-        public int AsignacionMateriaId { set; get; }
-        public virtual AsignacionMateria AsignacionMateria { set; get; }
+        public virtual Salon Salon { get; set; }
+        public virtual Materia Materia { get; set; }
+        public virtual Grupo Grupo { get; set; }
+
     }
 }
