@@ -77,6 +77,5 @@ C:\Users\Godinez Miranda\Documents\GitHub\SchoolTime\SchoolTime\SchoolTime\bin\e
 C:\Users\Godinez Miranda\Documents\GitHub\SchoolTime\SchoolTime\SchoolTime\bin\es\System.Web.WebPages.resources.dll
 C:\Users\Godinez Miranda\Documents\GitHub\SchoolTime\SchoolTime\SchoolTime\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Godinez Miranda\Documents\GitHub\SchoolTime\SchoolTime\SchoolTime\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\Godinez Miranda\Documents\GitHub\SchoolTime\SchoolTime\SchoolTime\obj\Debug\SchoolTime.csprojResolveAssemblyReference.cache
 C:\Users\Godinez Miranda\Documents\GitHub\SchoolTime\SchoolTime\SchoolTime\obj\Debug\SchoolTime.dll
 C:\Users\Godinez Miranda\Documents\GitHub\SchoolTime\SchoolTime\SchoolTime\obj\Debug\SchoolTime.pdb

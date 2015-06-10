@@ -15,9 +15,19 @@ namespace SchoolTime.Controllers
         private SchoolTimeDbContext db = new SchoolTimeDbContext();
 
         // GET: AsignacionRols
-        public ActionResult Index()
+        public ActionResult Index(int? SelectedRol)
         {
-            var asignacionRols = db.AsignacionRols.Include(a => a.Rol).Include(a => a.Usuario);
+            var rols = db.Rols.OrderBy(q => q.Nombre).ToList();
+            ViewBag.SelectedRol = new SelectList(rols, "Id", "Nombre", SelectedRol);
+            int RolsID = SelectedRol.GetValueOrDefault();
+
+            IQueryable<AsignacionRol> asignacionRols = db.AsignacionRols
+                .Where(c => !SelectedRol.HasValue || c.Rol.Id == RolsID)
+                .OrderBy(d => d.Rol.Nombre)
+                .Include(a => a.Rol)
+                .Include(a => a.Usuario);
+            var sql = asignacionRols.ToString();
+            //var asignacionRols = db.AsignacionRols.Include(a => a.Rol).Include(a => a.Usuario);
             return View(asignacionRols.ToList());
         }
 
