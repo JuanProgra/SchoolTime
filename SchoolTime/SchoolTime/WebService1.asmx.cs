@@ -28,7 +28,7 @@ namespace SchoolTime
             int ok = 0;
             Usuario usuario = db.Usuarios.Find(user);
             AsignacionRol asignacionRol = db.AsignacionRols.Find();
-            var nombre = asignacionRol.Usuario.Nombre;
+            var students = from s in db.Usuarios select s;
             if(usuario != null)
             {
                 if (usuario.Password == password)
