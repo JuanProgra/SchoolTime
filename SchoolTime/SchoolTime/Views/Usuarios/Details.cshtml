@@ -35,55 +35,21 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Correo)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Correo)
         </dd>
-        <dt>
-            Rol
-        </dt>
-        <dd>
-            <table class="table">
-                <tr>
-                </tr>
-                @foreach (var item in Model.AsignacionRol)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Rol.Nombre)
-                        </td>
-                    </tr>
-                }
-            </table>
-        </dd>
-        <dt>
-            Grupo
-        </dt>
-        <dd>
-            <table class="table">
-                <tr></tr>
-                @foreach (var item in Model.AsignacionGrupo)
-                {
-                    <tr>
 
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Grupo.Codigo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Grupo.AsignacionGrado.Curso.Nombre)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Grupo.AsignacionGrado.Grado.Nombre)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Grupo.Jornada.Nombre)
-                        </td>
-                    </tr>
-                }
-            </table>
-        </dd>
     </dl>
 </div>
 <p>

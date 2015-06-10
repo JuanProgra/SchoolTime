@@ -14,8 +14,12 @@ namespace SchoolTime.Models
         public int SalonId { set; get; }
         public int? GrupoId { set; get; }
         public int MateriaId { set; get; }
-        [DisplayFormat(DataFormatString = "{0:T}", ApplyFormatInEditMode = true)]
+        [Required]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:H:mm}")]
         public DateTime Hora { set; get; }
+        [Required]
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dddd}", ApplyFormatInEditMode = true)]
         public DateTime Dia { set; get; }
 

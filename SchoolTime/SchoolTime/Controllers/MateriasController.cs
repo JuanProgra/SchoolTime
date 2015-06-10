@@ -10,107 +10,107 @@ using SchoolTime.Models;
 
 namespace SchoolTime.Controllers
 {
-    public class JornadasController : Controller
+    public class MateriasController : Controller
     {
         private SchoolTimeDbContext db = new SchoolTimeDbContext();
 
-        // GET: Jornadas
+        // GET: Materias
         public ActionResult Index()
         {
-            return View(db.Jornadas.ToList());
+            return View(db.Materia.ToList());
         }
 
-        // GET: Jornadas/Details/5
+        // GET: Materias/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Jornada jornada = db.Jornadas.Find(id);
-            if (jornada == null)
+            Materia materia = db.Materia.Find(id);
+            if (materia == null)
             {
                 return HttpNotFound();
             }
-            return View(jornada);
+            return View(materia);
         }
 
-        // GET: Jornadas/Create
+        // GET: Materias/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Jornadas/Create
+        // POST: Materias/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nombre")] Jornada jornada)
+        public ActionResult Create([Bind(Include = "Id,Nombre")] Materia materia)
         {
             if (ModelState.IsValid)
             {
-                db.Jornadas.Add(jornada);
+                db.Materia.Add(materia);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(jornada);
+            return View(materia);
         }
 
-        // GET: Jornadas/Edit/5
+        // GET: Materias/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Jornada jornada = db.Jornadas.Find(id);
-            if (jornada == null)
+            Materia materia = db.Materia.Find(id);
+            if (materia == null)
             {
                 return HttpNotFound();
             }
-            return View(jornada);
+            return View(materia);
         }
 
-        // POST: Jornadas/Edit/5
+        // POST: Materias/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre")] Jornada jornada)
+        public ActionResult Edit([Bind(Include = "Id,Nombre")] Materia materia)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(jornada).State = EntityState.Modified;
+                db.Entry(materia).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(jornada);
+            return View(materia);
         }
 
-        // GET: Jornadas/Delete/5
+        // GET: Materias/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Jornada jornada = db.Jornadas.Find(id);
-            if (jornada == null)
+            Materia materia = db.Materia.Find(id);
+            if (materia == null)
             {
                 return HttpNotFound();
             }
-            return View(jornada);
+            return View(materia);
         }
 
-        // POST: Jornadas/Delete/5
+        // POST: Materias/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Jornada jornada = db.Jornadas.Find(id);
-            db.Jornadas.Remove(jornada);
+            Materia materia = db.Materia.Find(id);
+            db.Materia.Remove(materia);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

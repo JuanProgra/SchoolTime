@@ -1,0 +1,42 @@
+﻿@model SchoolTime.Models.NotaTarea
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NotaTarea</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarea.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarea.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PunteoFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PunteoFinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCalificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCalificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
