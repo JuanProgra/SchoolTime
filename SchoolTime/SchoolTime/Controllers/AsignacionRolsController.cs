@@ -27,7 +27,6 @@ namespace SchoolTime.Controllers
                 .Include(a => a.Rol)
                 .Include(a => a.Usuario);
             var sql = asignacionRols.ToString();
-            //var asignacionRols = db.AsignacionRols.Include(a => a.Rol).Include(a => a.Usuario);
             return View(asignacionRols.ToList());
         }
 

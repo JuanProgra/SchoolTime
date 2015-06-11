@@ -24,6 +24,7 @@ namespace SchoolTime.Models
         public DbSet<AsigancionSalon> AsigancionSalons { get; set; }
         public DbSet<NotaTarea> NotaTareas { get; set; }
         public DbSet<Salon> Salon { get; set; }
+        public DbSet<NotificacionBitacora> NotificacionBitacora { get; set; }
  
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

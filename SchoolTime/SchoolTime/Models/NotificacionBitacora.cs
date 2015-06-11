@@ -16,8 +16,5 @@ namespace SchoolTime.Models
 
         public int NotaTareaId { set; get; }
         public virtual NotaTarea NotaTarea { set; get; }
-
-        public int TareaId { set; get; }
-        public virtual Tarea Tarea { set; get; }
     }
 }

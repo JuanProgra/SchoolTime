@@ -27,5 +27,6 @@ namespace SchoolTime.Models
         public virtual Materia Materia { get; set; }
         public virtual Grupo Grupo { get; set; }
 
+
     }
 }
