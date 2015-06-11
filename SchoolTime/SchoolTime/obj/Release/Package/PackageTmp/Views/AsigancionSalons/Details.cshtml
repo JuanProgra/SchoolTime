@@ -1,0 +1,58 @@
+﻿@model SchoolTime.Models.AsigancionSalon
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AsigancionSalon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Grupo.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grupo.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Materia.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Materia.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salon.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salon.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

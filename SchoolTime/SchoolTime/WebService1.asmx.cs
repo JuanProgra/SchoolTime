@@ -23,28 +23,28 @@ namespace SchoolTime
         {
             return "Hola a todos";
         }
-        public int Login(string user,string password)
+        [WebMethod]
+        public String Login(string user, string password)
         {
-            int ok = 0;
-            Usuario usuario = db.Usuarios.Find(user);
-            AsignacionRol asignacionRol = db.AsignacionRols.Find();
-            var students = from s in db.Usuarios select s;
-            if(usuario != null)
+            Usuario u = db.Usuarios.FirstOrDefault(c => c.NombreUsuario == user);
+            String nombre = "";
+            if (u != null)
             {
-                if (usuario.Password == password)
+                if (u.Password == password)
                 {
-                    ok = 1;
+                    nombre = u.Nombre + " " + u.Apellido;
                 }
                 else
                 {
-                    ok = 0;
+                    nombre = "0";
                 }
+
             }
             else
             {
-                ok = 0;
+                nombre = "0";
             }
-            return ok;
+            return nombre;
         }
     }
 }
