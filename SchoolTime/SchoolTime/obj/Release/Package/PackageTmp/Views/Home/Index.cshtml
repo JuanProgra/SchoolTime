@@ -2,30 +2,83 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<style>
+
+    #Co{
+        color: #ffffff;
+        background-color: #99cc1a;
+    }
+
+    #oi{
+        background: #0B173B;
+        color: #ffffff;
+    }
+    
+    #lo{
+        background:#ff3333;
+        border-radius:15px;
+        color: #ffffff;
+        background-color:#ff3333;
+    }
+
+    body{
+        background:#CFD8DC;
+    }
+
+     
+
+</style>
+
+<div id="oi" class="jumbotron">
+    
+    <img src="http://academics.kinal.edu.gt/theme/image.php/darkb/theme/1421999272/logos" border="15px" height="100" width="1000" margin="center">
+    
 </div>
 
-<div class="row">
+<div id="lo" class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <h2>Grados</h2>
+        
+        <p ><a id="Co" class="btn btn-default" @Html.ActionLink("Grados", "Index", "Gradoes")  </a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Materia</h2>
+        <p><a id="Co" class="btn btn-default" @Html.ActionLink("Materia", "Index", "Materias")  </a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Cursos</h2>
+        <p><a id="Co" class="btn btn-default" @Html.ActionLink("Cursos", "Index", "Cursoes")  </a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Salones</h2>
+        <p><a id="Co" class="btn btn-default" @Html.ActionLink("Salones", "Index", "Salons")  </a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Grupos</h2>
+        <p><a id="Co" class="btn btn-default" @Html.ActionLink("Grupos", "Index", "Grupoes")  </a></p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Grado</h2>
+        <p><a id="Co" class="btn btn-default" @Html.ActionLink("Grados", "Index", "Gradoes")  </a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Categorias</h2>
+        <p><a id="Co" class="btn btn-default" @Html.ActionLink("Categorias", "Index", "Categorias")  </a></p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Notas</h2>
+        <p><a id="Co" class="btn btn-default" @Html.ActionLink("Notas", "Index", "NotaTareas")  </a></p>
+    </div>
+  
+  
     </div>
 </div>
+
+
+
+
+

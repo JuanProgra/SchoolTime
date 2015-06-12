@@ -4,6 +4,20 @@
     ViewBag.Title = "Details";
 }
 
+
+<style>
+  
+    #lo {
+        background: #B6B6B6;
+        border-radius: 15px;
+        color: #ffffff;
+        background-color: #99cc1a;
+    }
+
+</style>
+
+
+
 <h2>Details</h2>
 
 <div>
@@ -76,8 +90,11 @@
                     <th>Curso</th>
                     <th>Grado</th>
                     <th>Jornada</th>
-                    
+                   
+
                 </tr>
+
+
                 @foreach (var item in Model.AsignacionGrupo)
                 {
                     <tr>
@@ -95,10 +112,21 @@
                         </td>
                     </tr>
                 }
+
             </table>
         </dd>
     </dl>
+    <div  class="col-md-4">
+        <p><a id="lo" class="btn btn-default" @Html.ActionLink("Asignacion Roles", "Index", "AsignacionRols")  </a></p>
+    </div>
+
+    <div  class="col-md-4">
+        <p><a id="lo" class="btn btn-default" @Html.ActionLink("Asignacion Grupos", "Index", "AsignacionGrupoes")  </a></p>
+    </div>
 </div>
+
+
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
