@@ -15,10 +15,22 @@ namespace SchoolTime.Controllers
         private SchoolTimeDbContext db = new SchoolTimeDbContext();
 
         // GET: AsigancionSalons
-        public ActionResult Index()
+        public ActionResult Index(int? SelectedSalon)
         {
-            var asigancionSalons = db.AsigancionSalons.Include(a => a.Grupo).Include(a => a.Materia).Include(a => a.Salon);
-            return View(asigancionSalons.ToList());
+
+            var salon = db.Grupos.OrderBy(s => s.Codigo).ToList();
+            ViewBag.SelectedSalon = new SelectList(salon, "Id", "Codigo", SelectedSalon);
+            int SalonID = SelectedSalon.GetValueOrDefault();
+
+
+            IQueryable<AsigancionSalon> asignacionSalonss = db.AsigancionSalons
+                .Where(c => !SelectedSalon.HasValue || c.Grupo.Id == SalonID)
+                .OrderBy(d => d.Salon.Nombre)
+                .Include(a => a.Grupo)
+                .Include(a => a.Materia)
+                .Include(a => a.Salon);
+            var sql = asignacionSalonss.ToString();
+            return View(asignacionSalonss.ToList());
         }
 
         // GET: AsigancionSalons/Details/5

@@ -150,6 +150,7 @@
     <Compile Include="Models\AsignacionGrupo.cs" />
     <Compile Include="Models\AsignacionRol.cs" />
     <Compile Include="Models\AsigSalon.cs" />
+    <Compile Include="Models\AsigTarea.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\CategoriaCurso.cs" />
     <Compile Include="Models\Curso.cs" />

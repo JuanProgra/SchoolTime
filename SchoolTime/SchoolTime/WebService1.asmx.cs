@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using SchoolTime.Models;
+using System.Data;
+using System.Data.Entity;
+using System.Net;
+
 
 namespace SchoolTime
 {
@@ -17,7 +21,6 @@ namespace SchoolTime
     // [System.Web.Script.Services.ScriptService]
     public class WebService1 : System.Web.Services.WebService
     {
-        private SchoolTimeDbContext db = new SchoolTimeDbContext();
         [WebMethod]
         public string HelloWorld()
         {
@@ -26,6 +29,7 @@ namespace SchoolTime
         [WebMethod]
         public String Login(string user, string password)
         {
+            SchoolTimeDbContext db = new SchoolTimeDbContext();
             Usuario u = db.Usuarios.FirstOrDefault(c => c.NombreUsuario == user);
             String nombre = "";
             if (u != null)
@@ -47,31 +51,9 @@ namespace SchoolTime
             return nombre;
         }
         [WebMethod]
-        public List<AsigSalon> Get_horario(string codigo,string time)
-        {
-            DateTime timeD = Convert.ToDateTime(time);
-
-            AsigancionSalon asig = db.AsigancionSalons.FirstOrDefault(asi => asi.Grupo.Codigo == codigo && asi.Dia == timeD);
-
-            List<AsigSalon> asigancion = new List<AsigSalon>();
-            AsigSalon obj;
-            var culture = new System.Globalization.CultureInfo("es-ES");
-
-            if (asig != null)
-            {
-                obj = new AsigSalon();
-                obj.Codigo = asig.Grupo.Codigo;
-                obj.Hora = Convert.ToString(asig.Hora.TimeOfDay);
-                obj.Materia = asig.Materia.Nombre;
-                obj.Dia = culture.DateTimeFormat.GetDayName(asig.Dia.DayOfWeek);
-
-                asigancion.Add(obj);
-            }
-            return asigancion;
-        }
-        [WebMethod]
         public String Get_Grupo(string usuairo)
         {
+            SchoolTimeDbContext db = new SchoolTimeDbContext();
             String codigo = "";
             AsignacionGrupo asGru = db.AsignacionGrupoes.FirstOrDefault(ast => ast.Usuario.NombreUsuario == usuairo);
 
@@ -81,5 +63,75 @@ namespace SchoolTime
             }
             return codigo;
         }
+        [WebMethod]
+        public List<AsigSalon> Get_horario(string codigo)
+        {
+            SchoolTimeDbContext db = new SchoolTimeDbContext();
+
+            IQueryable<AsigancionSalon> asig = db.AsigancionSalons
+                .Where(asi => asi.Grupo.Codigo == codigo);
+
+            var culture = new System.Globalization.CultureInfo("es-ES");
+
+            var list = new List<AsigSalon>();
+            AsigSalon obj;
+            foreach (var item in asig.ToList())
+            {
+                obj = new AsigSalon();
+                obj.Salon = item.Salon.Nombre;
+                obj.Hora = Convert.ToString(item.Hora.TimeOfDay);
+                obj.Materia = item.Materia.Nombre;
+                obj.Dia = culture.DateTimeFormat.GetDayName(item.Dia.DayOfWeek);
+
+                list.Add(obj);
+            }
+            return list;
+        }
+        [WebMethod]
+        public List<AsigSalon> Get_materia(string codigo)
+        {
+            SchoolTimeDbContext db = new SchoolTimeDbContext();
+
+            IQueryable<AsigancionSalon> asig = db.AsigancionSalons
+                .Where(asi => asi.Grupo.Codigo == codigo);
+
+            var culture = new System.Globalization.CultureInfo("es-ES");
+
+            var list = new List<AsigSalon>();
+            AsigSalon obj;
+            foreach (var item in asig.ToList())
+            {
+                obj = new AsigSalon();
+                obj.Materia = item.Materia.Nombre;
+
+                list.Add(obj);
+            }
+            return list;
+        }
+        
+        [WebMethod]
+        public List<AsigTarea> Get_tareas(string materia)
+        {
+            SchoolTimeDbContext db = new SchoolTimeDbContext();
+
+            IQueryable<AsigancionTarea> asigancionTarea = db.AsigancionTareas
+                .Where(c => c.Materia.Nombre == materia);
+
+            var list = new List<AsigTarea>();
+            AsigTarea obj;
+            foreach (var item in asigancionTarea.ToList())
+            {
+                obj = new AsigTarea();
+                obj.NombreTare = item.Materia.Nombre;
+                obj.Nombre = item.Tarea.Nombre;
+                obj.Detalle = item.Tarea.Detalle;
+                obj.Fecha = item.Tarea.FechaEntrega;
+                obj.Punteo = item.Tarea.Punteo;
+
+                list.Add(obj);
+            }
+            return list;
+        }
+
     }
 }

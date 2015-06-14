@@ -11,13 +11,38 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-
-        <dd>
             @Html.DisplayFor(model => model.Nombre)
+        </dt>
+        <dt>
+            
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Tarea</th>
+                    <th>Detalle</th>
+                    <th>Fecha de entrega</th>
+                    <th>Punteo</th>
+                </tr>
+                @foreach (var item in Model.AsigancionTarea)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tarea.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tarea.Detalle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tarea.FechaEntrega)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tarea.Punteo)
+                        </td>
+                    </tr>
+                }
+            </table>
         </dd>
-
     </dl>
 </div>
 <p>

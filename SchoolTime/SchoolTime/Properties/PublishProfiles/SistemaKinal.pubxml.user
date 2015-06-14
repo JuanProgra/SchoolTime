@@ -52,7 +52,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/10/2015 22:36:09</publishTime>
     </File>
     <File Include="bin/SchoolTime.dll">
-      <publishTime>06/12/2015 10:08:50</publishTime>
+      <publishTime>06/14/2015 12:06:25</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>06/10/2015 22:36:09</publishTime>
@@ -160,7 +160,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/10/2015 22:36:05</publishTime>
     </File>
     <File Include="Views/AsigancionSalons/Index.cshtml">
-      <publishTime>06/11/2015 02:04:32</publishTime>
+      <publishTime>06/13/2015 17:39:11</publishTime>
     </File>
     <File Include="Views/AsigancionTareas/Create.cshtml">
       <publishTime>06/10/2015 22:36:05</publishTime>
@@ -313,7 +313,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/10/2015 22:36:05</publishTime>
     </File>
     <File Include="Views/Materias/Details.cshtml">
-      <publishTime>06/10/2015 22:36:05</publishTime>
+      <publishTime>06/13/2015 15:45:23</publishTime>
     </File>
     <File Include="Views/Materias/Edit.cshtml">
       <publishTime>06/10/2015 22:36:05</publishTime>
@@ -409,7 +409,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/10/2015 22:36:05</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/12/2015 08:59:57</publishTime>
+      <publishTime>06/13/2015 17:55:13</publishTime>
     </File>
     <File Include="WebService1.asmx">
       <publishTime>06/10/2015 22:36:05</publishTime>
